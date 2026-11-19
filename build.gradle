@@ -1,0 +1,46 @@
+plugins {
+    id 'java-library'
+    // NeoForge's official build plugin (same version as NeoForge's 1.21.1 template).
+    id 'net.neoforged.moddev' version '2.0.148'
+}
+
+version = mod_version
+group = mod_group_id
+
+base {
+    archivesName = mod_id
+}
+
+// Minecraft 1.21.1 runs on Java 21. Gradle downloads it automatically if needed.
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+
+neoForge {
+    version = project.neo_version
+
+    mods {
+        "${mod_id}" {
+            sourceSet(sourceSets.main)
+        }
+    }
+}
+
+// Fill in ${...} placeholders in neoforge.mods.toml from gradle.properties.
+def modProperties = [
+        mod_id           : mod_id,
+        mod_name         : mod_name,
+        mod_version      : mod_version,
+        mod_authors      : mod_authors,
+        mod_license      : mod_license,
+        mod_issue_tracker: mod_issue_tracker,
+]
+
+processResources {
+    inputs.properties(modProperties)
+    filesMatching('META-INF/neoforge.mods.toml') {
+        expand(modProperties)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}

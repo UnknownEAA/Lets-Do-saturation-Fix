@@ -1,0 +1,50 @@
+# Mod metadata read by NeoForge. Values like ${mod_id} are filled in from gradle.properties
+# when the mod is built, so edit gradle.properties instead of this file.
+
+modLoader = "javafml"
+loaderVersion = "[1,)"
+license = "${mod_license}"
+issueTrackerURL = "${mod_issue_tracker}"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
+description = '''
+Fixes [Let's Do] Farm & Charm and [Let's Do] Brewery foods giving far too little saturation on NeoForge 1.21.1.
+Unofficial fix. Contains no code from either mod, and switches itself off once the bug is fixed upstream.
+'''
+
+[[mixins]]
+config = "${mod_id}.mixins.json"
+
+[[dependencies.${mod_id}]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.21.1]"
+ordering = "NONE"
+side = "BOTH"
+
+# Required: the game will refuse to start (with a clear message) if either is missing.
+# ordering = "AFTER" makes this mod load after them, so its fix is applied last.
+[[dependencies.${mod_id}]]
+modId = "farm_and_charm"
+type = "required"
+versionRange = "[1.1,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.${mod_id}]]
+modId = "brewery"
+type = "required"
+versionRange = "[2.1,)"
+ordering = "AFTER"
+side = "BOTH"

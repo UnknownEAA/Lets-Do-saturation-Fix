@@ -1,0 +1,22 @@
+SATURATION FIX FOR FARM & CHARM AND BREWERY - START HERE
+=========================================================
+
+This folder is a complete Minecraft mod project. You don't need to write any code.
+
+Open the guides in the "docs" folder, in this order (double-click; they open in Notepad,
+or view them nicely on GitHub after step 1):
+
+  1-BUILD.md                    Turn this project into a .jar mod file
+  2-TEST.md                     Check it works in your game
+  3-PUBLISH-ON-CURSEFORGE.md    Put it on CurseForge
+  4-ADD-TO-MODPACKS-AND-SHARE.md   Use it in modpacks / share codes
+  5-UPDATING.md                 Later: new versions, upstream fix
+
+Tip: use the folder you get by extracting FCB-Saturation-Fix.zip. It contains a hidden
+".github" folder that GitHub needs to build the mod automatically. (If you're missing it,
+1-BUILD.md step A3b shows how to add it in 1 minute.)
+
+The only file you need to edit before building is gradle.properties
+(put your name on the "mod_authors=" line). Also put your name in LICENSE.
+
+Time needed: about 15 minutes to build and test, plus CurseForge's review wait.

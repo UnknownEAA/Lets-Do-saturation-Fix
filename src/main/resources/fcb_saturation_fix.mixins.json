@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "com.fcbsatfix.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "FoodBlockBiteMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 0
+  }
+}
